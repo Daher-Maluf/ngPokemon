@@ -12,8 +12,10 @@
         <img mat-card-md-image [src]="pokemon.sprites.front_shiny" alt="pokemon">
      </mat-card-content>
      <mat-card-footer>
-        <mat-card-subtitle><b>Type:</b> {{pokemon.types[0].type.name}}</mat-card-subtitle>
         <mat-card-subtitle><b>Id:</b> {{pokemon.id}}</mat-card-subtitle>
+        <mat-card-subtitle><b>Type:</b> {{pokemon.types[0].type.name}}</mat-card-subtitle>
+        <mat-card-subtitle><b>Height:</b> {{pokemon.height}}</mat-card-subtitle>
+        <mat-card-subtitle><b>Ability:</b> {{pokemon.abilities[0].ability.name}}</mat-card-subtitle>
 
      </mat-card-footer>
         

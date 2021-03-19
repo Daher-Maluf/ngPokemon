@@ -36,6 +36,7 @@ export enum TYPE_COLOURS {
   export interface PokemonDetails {
     name: string;
     id: number;
+    height: number;
     sprites: Sprites;
     abilities?: Array<any>;
     types?: Array<any>;
