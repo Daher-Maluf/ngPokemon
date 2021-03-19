@@ -18,13 +18,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-    return this.loadData();
   }
 
 
-  loadData(){
-    this.pokeService.getPokemon().subscribe((data)=>{
-       console.log(data);
-    })
-  }
+  
 }

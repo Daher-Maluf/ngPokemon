@@ -1,0 +1,25 @@
+<div class="container" >
+
+
+ <mat-card class="box" *ngFor="let pokemon of pokemons | paginate: {id: 'listing_pagination',itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}">
+     <mat-card-header>
+        <div mat-card-avatar ><img mat-card-image [src]="pokemon.sprites.front_default" alt="pokemon"></div>
+        <mat-card-title>{{pokemon.name}}</mat-card-title>
+        
+        
+     </mat-card-header>
+     <mat-card-content>
+        <img mat-card-md-image [src]="pokemon.sprites.front_shiny" alt="pokemon">
+     </mat-card-content>
+     <mat-card-footer>
+        <mat-card-subtitle><b>Type:</b> {{pokemon.types[0].type.name}}</mat-card-subtitle>
+        <mat-card-subtitle><b>Id:</b> {{pokemon.id}}</mat-card-subtitle>
+
+     </mat-card-footer>
+        
+</mat-card>
+
+</div>
+
+<pagination-controls id="listing_pagination" (pageChange)="page = $event; pokemons = []; getPokemons()" ></pagination-controls>
+   

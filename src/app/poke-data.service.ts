@@ -17,11 +17,12 @@ export class PokeDataService {
   constructor(private http: HttpClient) { }
 
 
-  getPokemon(): Observable<PokeAPI>{
-    return this.http.get<PokeAPI>(`${this.pokeApi}?limit=151`)
+  getPokemon(limit: number, offset: number): Observable<PokeAPI>{
+    return this.http.get<PokeAPI>(`${this.pokeApi}?limit=${limit}&offset=${offset}`)
                     .pipe(catchError(this._handleError));
   }
 
+  // get more pokemon data
   getPokemonDetails(name): Observable<PokemonDetails> {
     return this.http
       .get<PokemonDetails>(`${this.pokeApi}/${name}`)
